@@ -3,6 +3,7 @@ package es.eurohelp.filtros;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 import es.eurohelp.filtros.misfiltros2.FiltroPersonaNombre;
 import es.eurohelp.intro.Persona;
@@ -20,37 +21,12 @@ public class Principal3 {
 		listaPersonas.add(new Persona("diego", "fernandez", 70));
 		listaPersonas.add(new Persona("gema", "gonzalez", 75));
 
-		Predicate<Persona> filtroPedros = new FiltroPersonaNombre("pedro");
-
-		Predicate<Persona> filtroPedrosyJubilados = filtroPedros.or(Persona::estaJubilado);
-
-		List<Persona> nueva = buscarPersonas(filtroPedrosyJubilados, listaPersonas);
-
-		for (Persona p : nueva) {
-
-			System.out.println(p.getNombre() + "," + p.getApellidos());
-		}
-
-	}
-
-	// declaracion
-	public static List<Persona> buscarPersonas(Predicate<Persona> filtro, List<Persona> milista) {
-
-		List<Persona> listaFiltro = new ArrayList<Persona>();
-
-		for (Persona p : milista) {
-
-			// el filtrado la persona lo pasa
-			// añadimos la persona a la lista
-			if (filtro.test(p)) {
-
-				listaFiltro.add(p);
-			}
-
-		}
-
-		return listaFiltro;
-
-	}
+		Stream<Persona> flujoTrabajo= listaPersonas.stream();
+		
+		
+		flujoTrabajo
+		.filter(p->!p.getNombre().equals("pedro"))
+		.forEach((p)->System.out.println(p.getNombre()));
+	}	
 
 }
