@@ -34,6 +34,19 @@ public class Persona implements Comparable<Persona> {
 		// TODO Auto-generated method stub
 		return this.getNombre().compareTo(otro.getNombre());
 	}
+	// para que esto nos funcione como método de referencia
+	// al final un metodo de referencia no es ni mas ni menos 
+	// que una funcion reutilizable o expresion lambda reutilizable
 	
+	// contexto de ejecucion y la funcionalidad que implementa
 	
+//	public static boolean estaJubilado (Persona persona) {
+//		
+//		return persona.getEdad()>65;
+//	}
+	// al objeto que estemos manejando en ese momento
+	public boolean estaJubilado() {
+		// a traves del uso del operador de ambito this
+		return this.getEdad()>65;
+	}
 }
