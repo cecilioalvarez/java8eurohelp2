@@ -1,4 +1,4 @@
-package es.eurohelp;
+package es.eurohelp.intro;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -22,14 +22,7 @@ public class Principal4 {
 		
 		listaPersonas.sort((Persona p1, Persona p2)-> {
 
-				if (p1.getEdad() == p2.getEdad()) {
-
-					return 0;
-				} else if (p1.getEdad() > p2.getEdad()) {
-					return 1;
-				} else {
-					return -1;
-				}
+				return p1.getNombre().compareTo(p2.getNombre());
 
 			}
 		);

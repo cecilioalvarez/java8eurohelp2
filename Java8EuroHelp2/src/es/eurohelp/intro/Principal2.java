@@ -1,4 +1,4 @@
-package es.eurohelp;
+package es.eurohelp.intro;
 
 import java.util.ArrayList;
 import java.util.Collections;

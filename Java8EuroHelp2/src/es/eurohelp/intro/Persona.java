@@ -1,4 +1,4 @@
-package es.eurohelp;
+package es.eurohelp.intro;
 
 public class Persona implements Comparable<Persona> {
 

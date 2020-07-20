@@ -1,9 +1,9 @@
-package es.eurohelp;
+package es.eurohelp.intro;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Principal3 {
+public class Principal6 {
 
 	public static void main(String[] args) {
 
@@ -20,19 +20,9 @@ public class Principal3 {
 		// expresion lambda
 		// es una funcion anonima
 		
-		listaPersonas.sort((Persona p1, Persona p2)-> {
-
-				if (p1.getEdad() == p2.getEdad()) {
-
-					return 0;
-				} else if (p1.getEdad() > p2.getEdad()) {
-					return 1;
-				} else {
-					return -1;
-				}
-
-			}
-		);
+		// y ordeno , lo hago sobre una lista de personas
+		
+		listaPersonas.sort((p1, p2)-> p1.getNombre().compareTo(p2.getNombre()));
 
 		for (Persona p : listaPersonas) {
 
