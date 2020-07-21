@@ -34,4 +34,8 @@ public class Factura {
 		
 		return importe *1.21;
 	}
+	@Override
+	public String toString() {
+		return "Factura [numero=" + numero + ", concepto=" + concepto + ", importe=" + importe + "]";
+	}
 }

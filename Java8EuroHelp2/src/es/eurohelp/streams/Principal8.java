@@ -1,12 +1,7 @@
 package es.eurohelp.streams;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
-
-import es.eurohelp.filtros.misfiltros2.FiltroPersonaNombre;
-import es.eurohelp.intro.Persona;
+import java.util.Optional;
 
 public class Principal8 {
 
@@ -14,12 +9,18 @@ public class Principal8 {
 
 		
 		RepositorioFacturas repo= new RepositorioFacturas();
-		List<Factura> lista= repo.buscarTodasTransformadas();
+		List<Factura> lista= repo.buscarTodas();
 		
-		for (Factura f: lista) {
+		//Optional<String> micadena= Optional.of("hola");
+		Optional<String> micadena= Optional.empty();
+		
+		if (micadena.isPresent()) {
 			
-			System.out.println(f.getConcepto());
+			System.out.println(micadena.get());
 		}
+		
+		
+		
 		
 		
 		
