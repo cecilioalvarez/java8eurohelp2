@@ -2,6 +2,11 @@ package es.eurohelp.intro;
 
 public class Persona implements Comparable<Persona> {
 
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + "]";
+	}
+
 	private String nombre;
 	private String apellidos;
 	private int edad;

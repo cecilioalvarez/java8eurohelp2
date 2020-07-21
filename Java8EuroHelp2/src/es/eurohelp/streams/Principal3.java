@@ -1,4 +1,4 @@
-package es.eurohelp.filtros;
+package es.eurohelp.streams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,35 @@ public class Principal3 {
 		// no usas para recorrer un bucle for
 		// sino que usas funciones para definir las tareas a realizar
 		//.filter(p->!p.getNombre().equals("pedro"))
-		.filter(p->p.getNombre().equals("ana"))
-		.forEach((p)->System.out.println(p.getNombre()));
+		.filter(Persona::estaJubilado)
+		.forEach((Persona p)-> {
+			
+				System.out.println("*********");
+				System.out.println(p.getEdad());
+				System.out.println("*********");
+				
+			
+		});
+		
+		
+		Predicate<Persona> predicado= p->p.getNombre().equals("pedro");
+		Predicate<Persona> nuevo=predicado.or(p->p.getNombre().equals("diego"))
+				.or(p->p.getNombre().equals("gema"));
+		
+		
+		Stream<Persona> flujoTrabajo2= listaPersonas.stream();
+		flujoTrabajo2
+		
+		.filter(nuevo)
+		.forEach((Persona p)-> {
+			
+				
+				System.out.println(p.getNombre());
+				
+				
+			
+		});
+			
 	}	
 
 }

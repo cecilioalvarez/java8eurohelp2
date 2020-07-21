@@ -1,4 +1,4 @@
-package es.eurohelp.filtros;
+package es.eurohelp.streams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 import es.eurohelp.filtros.misfiltros2.FiltroPersonaNombre;
 import es.eurohelp.intro.Persona;
 
-public class Principal3 {
+public class Principal4 {
 
 	public static void main(String[] args) {
 
@@ -23,11 +23,10 @@ public class Principal3 {
 
 		Stream<Persona> flujoTrabajo= listaPersonas.stream();
 		flujoTrabajo
-		// no usas para recorrer un bucle for
-		// sino que usas funciones para definir las tareas a realizar
-		//.filter(p->!p.getNombre().equals("pedro"))
-		.filter(p->p.getNombre().equals("ana"))
-		.forEach((p)->System.out.println(p.getNombre()));
-	}	
+		.map((p)->p.getEdad())
+		.forEach(System.out::println);
+	}
+		
+		
 
 }
