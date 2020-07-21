@@ -11,10 +11,15 @@ public class RepositorioFacturas {
 
 	static {
 
-		listaFacturas.add(new Factura(1, "java", 20));
-		listaFacturas.add(new Factura(2, "net", 30));
-		listaFacturas.add(new Factura(3, "php", 40));
-		listaFacturas.add(new Factura(4, "linux", 10));
+		listaFacturas.add(new Factura(4, "java", 20));
+		listaFacturas.add(new Factura(3, "net", 30));
+		listaFacturas.add(new Factura(2, "php", 40));
+		listaFacturas.add(new Factura(2, "ajax", 40));
+		listaFacturas.add(new Factura(1, "linux", 10));
+		listaFacturas.add(new Factura(7, "net", 120));
+		listaFacturas.add(new Factura(8, "php", 130));
+		listaFacturas.add(new Factura(9, "ajax", 140));
+		listaFacturas.add(new Factura(10, "linux", 150));
 
 	}
 

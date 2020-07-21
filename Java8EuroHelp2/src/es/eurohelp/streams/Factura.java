@@ -1,6 +1,6 @@
 package es.eurohelp.streams;
 
-public class Factura {
+public class Factura  implements Comparable{
 
 	private int numero;
 	private String concepto;
@@ -37,5 +37,20 @@ public class Factura {
 	@Override
 	public String toString() {
 		return "Factura [numero=" + numero + ", concepto=" + concepto + ", importe=" + importe + "]";
+	}
+	@Override
+	public int compareTo(Object o) {
+		
+		Factura f= (Factura)o;
+		if (f.getNumero()>this.getNumero()) {
+			
+			return -1;
+		}else if (f.getNumero()==this.getNumero()) {
+			
+			return 0;
+		}else {
+			
+			return 1;
+		}
 	}
 }
